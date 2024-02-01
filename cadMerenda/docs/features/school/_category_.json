@@ -1,0 +1,8 @@
+{
+  "label": "School",
+  "position": 2,
+  "link": {
+    "type": "generated-index",
+    "description": "Concepts specific to the school user functionalities"
+  }
+}
