@@ -1,0 +1,8 @@
+{
+  "label": "Actors",
+  "position": 2,
+  "link": {
+    "type": "generated-index",
+    "description": "This section discloses the actors (roles) that interact with the system."
+  }
+}

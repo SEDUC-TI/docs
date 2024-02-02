@@ -1,8 +1,0 @@
-{
-  "label": "Supplier",
-  "position": 3,
-  "link": {
-    "type": "generated-index",
-    "description": "Concepts specific to the supplier user functionalities"
-  }
-}

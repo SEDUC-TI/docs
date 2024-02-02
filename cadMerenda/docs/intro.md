@@ -2,7 +2,17 @@
 sidebar_position: 1
 ---
 
-# Introduction
+# Getting started
+
+<div style={{display: 'flex', alignItems: 'center'}}>
+  <div>
+    ![Research illustration](../static/img/undraw_researching.svg)
+  </div>
+  <p>
+  Welcome to the CadMerenda documentation! This documentation aims to help you understand the application and its codebase. We will discuss the application's premise, its key concepts, and the actors and their interactions.
+  </p>
+</div>
+
 
 ### Table of contents
 
@@ -10,6 +20,7 @@ sidebar_position: 1
   - [The issue](#the-issue)
   - [The solution](#the-solution)
   - [The application](#the-application)
+  - [What's next?](#whats-next)
 
 ## What *is* CadMerenda anyway?
 
@@ -29,6 +40,12 @@ The school's demand would be based on the menu the nutritionist created. The sys
 
 ### The application
 
+It was developed using **MySQL**, **Node.js**, and **React**. The backend is a REST API that uses **Express.js** and the frontend is a single-page application that uses **React JS + VITE**.
+
+You can learn more about the actors and their interactions in the upcoming sections.
+
+#### Overview
+
 The flow of the application is as follows:
 
 1. The nutritionist creates a menu for the school based on the modality of the school.
@@ -36,6 +53,8 @@ The flow of the application is as follows:
 3. The supplier registers its supply of food for each selected school.
 4. The system matches the demand with the supply and shows a list of the 5 best suppliers for the school to purchase from.
 
-It was developed using MySQL, Node.js, and React. The backend is a REST API that uses Express.js and the frontend is a single-page application that uses React.
+### What's next?
 
-#### The next section will focus on explaining each part of the application in more detail.
+Now that you understand the premise of the application, you can move on to the next section to understand the key concepts of the application. This will help you understand the application's structure and how the code works.
+
+If you're interested in learning more about the actors and their interactions, you can move on to the next section to understand the actors and their interactions. This will help you understand the application's structure and how the code works.
