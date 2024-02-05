@@ -19,12 +19,20 @@
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
 [data-theme='dark'] {
-  --ifm-color-primary: #005da8;
-  --ifm-color-primary-dark: #194e7a;
-  --ifm-color-primary-darker: #2c3e50;
-  --ifm-color-primary-darkest: #15222e;
-  --ifm-color-primary-light: #2176bb;
-  --ifm-color-primary-lighter: #3b9def;
-  --ifm-color-primary-lightest: #80c2f8;
+  --ifm-color-primary: #3b9def;
+  --ifm-color-primary-dark: #005da8;
+  --ifm-color-primary-darker: #194e7a;
+  --ifm-color-primary-darkest: #2c3e50;
+  --ifm-color-primary-light: #93ccfa;
+  --ifm-color-primary-lighter: #a9d8ff;
+  --ifm-color-primary-lightest: #c1e2fd;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+}
+
+.footer--dark {
+  --ifm-footer-background-color: #005da8;
+}
+
+.github-icon > g > path {
+  fill: var(--ifm-color-primary);
 }

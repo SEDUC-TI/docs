@@ -41,17 +41,9 @@ const config = {
       ({
         docs: {
           sidebarPath: './sidebars.js',
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/SEDUC-TI/cad-merenda-front-end',
         },
         blog: {
           showReadingTime: true,
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
         },
         theme: {
           customCss: './src/css/custom.css',
@@ -70,6 +62,7 @@ const config = {
         logo: {
           alt: 'Governo de Alagoas',
           src: 'img/alagoasbrasaoazul.svg',
+          srcDark: 'img/alagoasbrasao.svg',
         },
         items: [
           {
@@ -87,15 +80,11 @@ const config = {
         ],
       },
       footer: {
-        style: 'light',
+        style: 'dark',
         links: [
           {
             title: 'Sources',
             items: [
-              {
-                label: 'Documentation GitHub',
-                href: 'https://github.com/SEDUC-TI/docs',
-              },
               {
                 label: 'Front-end Project GitHub',
                 href: 'https://github.com/SEDUC-TI/cad-merenda-front-end/'
@@ -110,8 +99,8 @@ const config = {
         copyright: `Copyright © ${new Date().getFullYear()} SEDUC-AL. Built with Docusaurus.`,
       },
       prism: {
-        theme: prismThemes.duotoneLight,
-        darkTheme: prismThemes.duotoneDark,
+        theme: prismThemes.oneLight,
+        darkTheme: prismThemes.oneDark,
       },
     }),
 };
