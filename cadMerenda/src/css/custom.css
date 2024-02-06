@@ -36,3 +36,28 @@
 .github-icon > g > path {
   fill: var(--ifm-color-primary);
 }
+
+.tag--primary {
+  background-color: var(--ifm-color-primary);
+  color: white;
+}
+
+.tag--secondary {
+  background-color: var(--ifm-color-primary-light);
+  color: var(--ifm-color-primary-darkest);
+}
+
+.tag--warning {
+  background-color: rgb(230, 126, 34);
+  color: white;
+}
+
+.tag--danger {
+  background-color: rgb(231, 76, 60);
+  color: white;
+}
+
+.tag--info {
+  background-color: rgb(155, 89, 182);
+  color: white;
+}

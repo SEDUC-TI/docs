@@ -1,3 +1,8 @@
+---
+sidebar_position: 1
+sidebar_label: API
+---
+
 # API
 
 If you're in the development team, you can access the specific route-by-route documentation through `{api_url}/docs` using the Swagger UI.

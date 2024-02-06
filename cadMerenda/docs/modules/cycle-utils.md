@@ -2,6 +2,74 @@
 
 path: `src/utils/cycleUtils.js`
 
+## cycleParser
+
+This is the main function of the cycle module. It takes the data object from the database and returns the formatted and tagged data. The input is the object returned from the database and the output is an object with the formatted and tagged data in multiple formats for optimal handling.
+
+**Step-by-step:**
+
+1. Checks if the data argument is provided. If not, it returns `null`.
+2. Formats the data using the `formatObject` function.
+3. Tags the `formattedData` using the `tagCycle` function.
+4. Checks if the first item in `taggedData` has a title of `'CURRENT STAGE'`. If so, it removes this item from `taggedData` and assigns it to `activeStage`.
+5. If `taggedData` is now empty, it returns an object with a date of `'00/00/0000'`, `daysToClose` of 0, and data as the `formattedData`.
+6. Checks the availability of `taggedData` using the `checkAvailability` function.
+7. Returns an object with various properties derived from `activeStage`, availability, and `taggedData`.
+
+### Arguments 
+
+Below are the arguments of the function:
+
+| Argument | Description                |
+|-----------|----------------------------|
+| `data`    | The object to be parsed.|
+
+Function call example:
+
+```javascript
+
+data = {
+    startNutri: '2021-10-01T00:00:00Z',
+    deadlineNutri: '2021-10-01T00:00:00Z',
+    startSchool: '2021-10-01T00:00:00Z',
+    deadlineSchool: '2021-10-01T00:00:00Z',
+    startSupplier: '2021-10-01T00:00:00Z',
+    deadlineSupplier: '2021-10-01T00:00:00Z',
+    initSelectSupplier: '2021-10-01T00:00:00Z',
+    deadlineSelectSupplier: '2021-10-01T00:00:00Z',
+}
+
+const parsedData = cycleParser(data);
+
+```
+
+### Returns
+
+`parsedData` (Object): An object with the formatted and tagged data.
+
+Return example:
+
+```javascript
+{
+  {
+    ended: activeStage === null && taggedData[0].title === 'END OF CYCLE',
+    soon: activeStage === null && taggedData[0].title !== 'END OF CYCLE',
+    betweenStage: activeStage === null,
+    list: availability.PAUTAS,
+    school: availability.PEDIDOS,
+    supplier: availability.PROPOSTAS,
+    view: availability.VISUALIZAÇÃO,
+    date: activeStage === null ? '00/00/0000' : parseDate(formattedData[activeStage.index].end),
+    daysToClose: activeStage === null ? '0' : daysUntil(formattedData[activeStage.index].end),
+    data: taggedData,
+  }
+}
+```
+
+The leaf functions used in the `cycleParser` function are described below.
+
+--- 
+
 ## formatObject
 
 This function formats the date object to be used in the cycle module. The input is the object returned from the database and the output is an array with instances of the object.
@@ -172,4 +240,56 @@ days = 10;
 
 ## checkAvailability
 
-WIP
+This function is a 'quality of life' functions that outputs the cycle statuses in a key-value format. The input is the array of objects returned from the `tagCycle` function and the output is an object with the cycle statuses. This is so it's easier to check the status of the cycle.
+
+**Step-by-step:**
+
+1. The `checkAvailability` function takes an object as input.
+2. It checks the title property of each object in the input object.
+3. It creates a new object with properties corresponding to specific titles.
+4. It assigns the tag value from the matching object to the corresponding property in the new object.
+5. Finally, the function returns this new object.
+
+### Arguments
+
+Below are the arguments of the function:
+
+| Argument | Description                |
+|-----------|----------------------------|
+| `data`    | The array of objects to be checked.|
+
+Function call example:
+
+```javascript
+
+data = [
+    {
+      title: deadlineNutri,
+      role: NUTRICIONISTA,
+      description: 'Definir os itens disponíveis para pedidos.',
+      start:  yyyy-mm-ddThh:mm:ssZ, // ISO 8601
+      end: yyyy-mm-ddThh:mm:ssZ, // ISO 8601
+      tag: 'PENDING',
+    }
+    // Rest of the objects (school, supplier, selectSupplier)
+]
+
+const cycleStatus = checkAvailability(data);
+
+```
+
+### Returns
+
+`cycleStatus` (Object): An object with the cycle statuses.
+
+Return example:
+
+```javascript
+{
+    NUTRICIONISTA: 'PENDING',
+    ESCOLA: 'PENDING',
+    FORNECEDOR: 'PENDING',
+    SELECIONAR_FORNECEDOR: 'PENDING',
+}
+```
+---
