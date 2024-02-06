@@ -28,7 +28,7 @@ This method creates an instance of the Address class. It receives no parameters 
 
 This method verifies if any of the properties is empty. If so, it returns `false`. Otherwise, it returns `true`.
 
-### `getJSON(void)`
+### `getJSON(void)` <Tag color='warning'>GETTER</Tag>
 
 This method returns the address in a JSON format.
 

@@ -68,7 +68,7 @@ This method checks if the instance has been initiated. If not, it throws an erro
 
 - `Error` - If the instance has not been initiated.
 
-### `getData(void)`
+### `getData(void)` <Tag color='warning'>GETTER</Tag>
 
 This method returns the data of the instance.
 

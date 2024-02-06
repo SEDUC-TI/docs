@@ -24,7 +24,7 @@ This method creates an instance of the Certificate class. It receives the name, 
 
 This method verifies if any of the properties is empty. If so, it returns `false`. Otherwise, it returns `true`.
 
-### `getJSON(void)`
+### `getJSON(void)` <Tag color='warning'>GETTER</Tag>
 
 This method returns the certificate in a JSON format.
 
