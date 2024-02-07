@@ -23,12 +23,12 @@ This method creates an instance of the Order class.
 
 This method initializes the instance of the Order class. It receives the INEP code and the token as parameters and sets the INEP property. It performs a series of procedures to set up the instance for usage. Below are the procedures:
 
-1. Use the [`getCycle`](../modules/requests/cycle-requests.md) function to get the current active cycle of the system and sets the cycleId property.
-2. Use the [`getModalityByInep`](../modules/requests/modality-requests.md) function to get the modalities of the school.
+1. Use the [`getCycle`](../modules/requests/cycles-requests.md) function to get the current active cycle of the system and sets the cycleId property.
+2. Use the [`getModalityByInep`](../modules/requests/school-requests.md) function to get the modalities of the school.
 3. Map the fetched modalities, adding the `requestedProducts`, `generalList` and initializing `hasOrder` as false.
 4. Use the [`getGeneralList`](../modules/requests/foodlist-requests.md) function to get the general list of products.
 5. Map the modalities, setting their respective general list and formatting it simultaneously.
-6. Use the [`getOrderByInep`](../modules/requests/order-requests.md) function to get the stored order, if it exists.
+6. Use the [`getOrderByInep`](../modules/requests/foodlist-requests.md) function to get the stored order, if it exists.
 7. If the order exists, set the `hasOrder` property as true and set the `orderId` property as the fetched order's id.
 8. Call the `mergeLists` method to merge the general list with the orders in the `modality` list.
 9. Set the `hasInitiated` property as true.
