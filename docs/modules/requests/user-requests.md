@@ -14,5 +14,5 @@ path: `'src/api/userRequests.js'`
 | verifyUser              | GET    | Auth Token                      | (Promise) Verification details | `/verify`                                          |
 | editUser                | PUT    | User ID, User details, Auth Token| -                               | `/user/:id`                                         |
 | login                   | POST   | User details                    | (Promise) User details         | `/login`                                           |
-| sendEmail               | POST   | Email                           | (Promise) Success message      | `/forgot-password/token`                            |
 | requestPasswordChange   | POST   | Email                           | (Promise) Success message      | `/forgot-password/token`                            |
+| checkPassword          | POST   | Password                        | (Promise) Success message      | `/user/verify/password`                            |

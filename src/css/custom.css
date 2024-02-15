@@ -30,7 +30,7 @@
 }
 
 .footer--dark {
-  --ifm-footer-background-color: #005da8;
+  --ifm-footer-background-color: var(--ifm-color-primary-darker);
 }
 
 .github-icon > g > path {

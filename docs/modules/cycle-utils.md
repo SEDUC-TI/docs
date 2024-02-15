@@ -47,7 +47,7 @@ const parsedData = cycleParser(data);
 
 `parsedData` (Object): An object with the formatted and tagged data.
 
-Return example:
+Return template:
 
 ```javascript
 {
@@ -286,10 +286,22 @@ Return example:
 
 ```javascript
 {
-    NUTRICIONISTA: 'PENDING',
-    ESCOLA: 'PENDING',
-    FORNECEDOR: 'PENDING',
-    SELECIONAR_FORNECEDOR: 'PENDING',
+    PAUTAS: 'PENDING',
+    PEDIDOS: 'PENDING',
+    PROPOSTAS: 'PENDING',
+    VISUALIZAÇÃO: 'PENDING',
 }
 ```
 ---
+
+## checkOverlapDates
+
+This function checks if there are overlapping dates in the cycle. The input is an object keys which values are arrays containing their start and end date, in order. It throws an error if there are overlapping dates.
+
+**Step-by-step:**
+
+1. Map the object to return an array only with the start dates.
+2. Map te object to return an array only with the end dates.
+3. Sort the start and end dates arrays ascendingly.
+4. Iterate over the start dates array.
+5. For each start date, check if it is greater than the previous end date. If it is, return true. If it isn't, throw an error.
